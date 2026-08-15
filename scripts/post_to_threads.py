@@ -4,41 +4,41 @@ import requests
 import json
 from datetime import datetime
 
-# サンプル飲み会イベントデータ
+# サンプル飲み会イベントデータ - 京都社会人飲み友募集
 SAMPLE_EVENTS = [
     {
         "date": "2026-08-15",
-        "location": "渋谷のおしゃれなバー",
-        "participants": ["開発者A", "デザイナーB", "PM C"],
-        "activities": ["乾杯🍻", "プロジェクト成功祝い🎉", "深夜カラオケ🎤"],
-        "highlights": "最新AIプロジェクト完成を祝う飲み会"
+        "location": "京都・祇園の立ち飲み屋",
+        "participants": ["社会人"],
+        "activities": ["気軽に飲む🍺", "新しい友達と出会う"],
+        "highlights": "飲み友募集"
     },
     {
         "date": "2026-08-22",
-        "location": "六本木のロoftop bar",
-        "participants": ["エンジニア5名", "デザイナー2名"],
-        "activities": ["夜景を眺めながら乾杯", "新機能ローンチ祝い"],
-        "highlights": "1000万ユーザー突破記念パーティー"
+        "location": "京都・四条通の居酒屋",
+        "participants": ["社会人"],
+        "activities": ["美味しい料理を食べながら乾杯🍶", "楽しく交流"],
+        "highlights": "飲み友募集"
     },
     {
         "date": "2026-08-29",
-        "location": "青山のワインバー",
-        "participants": ["技術リーダー", "新入社員たち"],
-        "activities": ["チームビルディング", "キャリア相談"],
-        "highlights": "若手エンジニア育成プログラム修了祝い"
+        "location": "京都・烏丸のおしゃれなBAR",
+        "participants": ["社会人"],
+        "activities": ["落ち着いた雰囲気で乾杯🥂", "大人の交流"],
+        "highlights": "飲み友募集"
     }
 ]
 
 def generate_envious_text(event):
-    """羨ましいと思わせる文章を生成"""
+    """飲み友募集のテキストを生成"""
     texts = [
-        f"✨ {event['highlights']} 🎉\n{event['location']}で{len(event['participants'])}人の仲間と最高の夜を過ごしました！\n\n🍻 乾杯🎊 #チームパワー #成功祝い",
+        f"🍺 {event['location']}で飲み友募集中！\n社会人同士、気軽に飲みませんか？😊\n\nカウンターで新しい友達と出会おう！\n#飲み友募集 #京都 #社会人",
         
-        f"🌃 {event['location']}からの景色最高〜！\n今日は{event['highlights']}🥂\nこんなチームで働けるって幸せだな〜😊\n\n#仕事仲間 #飲み会 #チームワーク",
+        f"🍶 {event['location']}から\n{event['highlights']}です！\n社会人ならみんなウェルカム🎉\n\n一緒に楽しい夜を過ごしましょう！\n#京都 #飲み友募集 #社会人交流",
         
-        f"🎉 {event['highlights']}\n参加者：{len(event['participants'])}名の才能あふれるメンバーたち✨\n{event['location']}での時間は最高でした！\n\nこんなチームに出会えてラッキー🍀 #最高の仲間",
+        f"🥂 今夜は{event['location']}で飲み会！\n飲み友を募集してます😄\n\n新しい友達との出会いが待ってる✨\n#飲み友募集 #京都グルメ #社会人",
         
-        f"📍 {event['location']}\n🎊 {event['highlights']}\n\nこのメンバーで一緒に働けるって、本当に幸せ。\n毎日がこんなに充実してて羨ましいでしょ？😄\n\n#エンジニアライフ #最高の環境 #チーム愛"
+        f"🌃 {event['location']}からのご案内🎊\n飲み友募集中です！\n\n社会人同士、気軽に飲める雰囲気🍻\nあなたも一緒に！\n#京都飲み会 #飲み友募集 #楽しい夜"
     ]
     
     import random
@@ -91,9 +91,9 @@ def main():
     
     print(f"\n📅 選択されたイベント: {event['date']}")
     print(f"📍 場所: {event['location']}")
-    print(f"👥 参加者: {len(event['participants'])}名")
+    print(f"🎯 内容: {event['highlights']}")
     
-    # 羨ましい文章を生成
+    # 飲み友募集文を生成
     text = generate_envious_text(event)
     print(f"\n📝 生成された投稿文:\n{text}\n")
     
@@ -102,7 +102,7 @@ def main():
     success = post_to_threads(text)
     
     if success:
-        print("\n✨ 完了！羨ましい飲み会の様子をThreadsで共有しました")
+        print("\n✨ 完了！飲み友募集をThreadsで共有しました")
     else:
         print("\n⚠️ テストモード: 実際に投稿するにはシークレット設定が必要です")
 
